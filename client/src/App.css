@@ -1,0 +1,27 @@
+
+
+/* Define scrollbar styles */
+::-webkit-scrollbar {
+  width: 10px;
+  /* Width of the scrollbar */
+}
+
+/* Define scrollbar track styles */
+::-webkit-scrollbar-track {
+  background: #efefef;
+  /* Color of the scrollbar track */
+}
+
+/* Define scrollbar thumb styles */
+::-webkit-scrollbar-thumb {
+  background: #e3e3e3;
+  /* Color of the scrollbar thumb */
+  border-radius: 5px;
+  /* Radius of the scrollbar thumb */
+}
+
+/* Define scrollbar thumb hover styles */
+::-webkit-scrollbar-thumb:hover {
+  background: #c3c3c3;
+  /* Color of the scrollbar thumb on hover */
+}
