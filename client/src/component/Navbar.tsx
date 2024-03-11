@@ -19,8 +19,15 @@ function classNames(...classes: string[]) {
 
 export default function Navbar() {
 
-const [user, setUser] = useState(false);
+const [user, setUser] = useState(null);
 
+  
+  const handleLogin = () => {
+    // Simulate user authentication (replace this with your actual authentication logic)
+    setTimeout(() => {
+      setUser({ name: 'John Doe', email: 'john@example.com' });
+    }, 1000); // Simulating an asynchronous operation
+  };
  
 
 
@@ -130,6 +137,9 @@ const [user, setUser] = useState(false);
                         {({ active }) => (
                           <a
                             href="#"
+                                onClick={ () => {
+                              setUser(null);
+  }}
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Sign out
@@ -140,7 +150,7 @@ const [user, setUser] = useState(false);
                   </Transition>
                 </Menu>
               </div>) : (
-                <button className='flex border px-3 py-2 rounded border-gray-300 text-gray-700 hover:text-[#5271FF] hover:border-[#5271FF] duration-500 '>
+                      <button onClick={handleLogin} className='flex border px-3 py-2 rounded border-gray-300 text-gray-700 hover:text-[#5271FF] hover:border-[#5271FF] duration-500 '>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15M12 9l3 3m0 0-3 3m3-3H2.25" />
 </svg>
